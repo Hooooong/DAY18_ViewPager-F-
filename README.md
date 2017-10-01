@@ -18,9 +18,7 @@ ____________________________________________________
 
 - ViewPager, TabLayout 사용법
 
-  - ViewPager 는 ListView, RecyclerView 와 같이 Adapter 를 사용하여 구현한다.
-
-  - ViewPager 인 경우에는 `FragmentStatePagerAdapter` 를 상속받아 구현한다.(Fragment를 사용하는 경우)
+  - ViewPager 는 ListView, RecyclerView 와 유사하게 Adapter 를 상속받아 구현한다.
 
   ```java
   private void setViewPager() {
@@ -45,7 +43,7 @@ ____________________________________________________
 
   - Fragment 로 구현하기 위해서는 `FragmentStatePagerAdapter` 를 상속받아 구현한다.
 
-  - `getItem()` 과 `getCount()` 를 재정의해야 한다. `getItem()` 은 ListView의 `getView()` 와 유사하다.
+  - `getItem()` 과 `getCount()` 를 재정의해야 한다. `getItem()` 은 BaseAdapter의 `getView()` 와 유사하다.
 
 ### Code Review
 ____________________________________________________
