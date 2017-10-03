@@ -223,21 +223,21 @@ ____________________________________________________
 
 -  fragment_one~four.xml
 
-  ```xml
-  <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:tools="http://schemas.android.com/tools"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      tools:context="com.hooooong.tablayout.OneFragment">
+    ```xml
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.hooooong.tablayout.OneFragment">
 
-      <!-- TODO: Update blank fragment layout -->
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:textSize="20dp"
-          android:textStyle="bold"
-          android:text="@string/title_one" />
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="@string/title_one" />
 
-  </FrameLayout>
-  ```
+    </FrameLayout>
+    ```
