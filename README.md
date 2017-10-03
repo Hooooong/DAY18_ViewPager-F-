@@ -16,6 +16,41 @@ ____________________________________________________
 
   - ViewPager 만 독립적으로 사용할 수 있지만, 대부분 TabLayout 과 함께 사용한다.
 
+- Adpater 구현
+
+  - Fragment 로 구현하기 위해서는 `FragmentStatePagerAdapter` 를 상속받아 구현한다.
+
+  - `getItem()` 과 `getCount()` 를 재정의해야 한다. `getItem()` 은 BaseAdapter의 `getView()` 와 유사하다.
+
+  - `getItem()` 는 Swipe 할 때 최대 3번, 최소 2번이 호출이 된다. 예를 들면 2번 페이지를 보여줄 때, 1, 2, 3 페이지를 한번에 호출해 메모리에 올리기 떄문에 총 3번 호출이 된다.
+
+  ```java
+  // ViewPager 에 보일 View의 갯수
+  private static final int COUNT = 4;
+
+  // 하나의 View를 보여줄 때 ViewPager 는 3개의 View 를 메모리에 올려두기 때문에 호출이 여러번 된다.
+  @Override
+  public Fragment getItem(int position) {
+      switch (position){
+          case 1:
+              return new TwoFragment();
+          case 2:
+              return new ThreeFragment();
+          case 3:
+              return new FourFragment();
+          default:
+              return new OneFragment();
+          // 그냥 New 로 생성을 하게 되면
+          // 마지막에 참조하지 않으면 GC 에서는 삭제 처리가 된다.
+      }
+  }
+
+  @Override
+  public int getCount() {
+      return COUNT;
+  }
+  ```
+
 - ViewPager, TabLayout 사용법
 
   - ViewPager 는 ListView, RecyclerView 와 유사하게 Adapter 를 상속받아 구현한다.
@@ -38,13 +73,6 @@ ____________________________________________________
       viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
   }
   ```
-
-- Adpater 구현
-
-  - Fragment 로 구현하기 위해서는 `FragmentStatePagerAdapter` 를 상속받아 구현한다.
-
-  - `getItem()` 과 `getCount()` 를 재정의해야 한다. `getItem()` 은 BaseAdapter의 `getView()` 와 유사하다.
-
 ### Code Review
 ____________________________________________________
 
