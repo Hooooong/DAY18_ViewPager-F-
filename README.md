@@ -15,7 +15,7 @@ ____________________________________________________
   - ViewPager 는 화면전환 없이 좌우 Swipe 를 통해 효율적으로 페이지 전환을 할 수 있는 Widget 이다.
 
   - ViewPager 만 독립적으로 사용할 수 있지만, 대부분 TabLayout 과 함께 사용한다.
-
+  
 - Adpater 구현
 
   - Fragment 로 구현하기 위해서는 `FragmentStatePagerAdapter` 를 상속받아 구현한다.
@@ -73,7 +73,7 @@ ____________________________________________________
       viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
   }
   ```
-  
+
 ### Code Review
 ____________________________________________________
 
